@@ -3,10 +3,10 @@ const key = "413585-Project-WV53SSDM";
 const query = async function() {
     try {
     const response = await fetch(
-        ``
+        `https://tastedive.com/api/similar?q=${searchItem}&type=music&k=${key}`
     );
-        const data = await response.json();
-        console.log(data);
+    const data = await response.json();
+    console.log(data);
       }
        catch (error) {
         console.log(error);
