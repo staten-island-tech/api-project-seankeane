@@ -1,9 +1,9 @@
-const key = "413585-Project-WV53SSDM";
+const key = "9a9c6529-4e77-4e79-a127-93acf5313c71";
 
 const query = async function() {
     try {
     const response = await fetch(
-        ``
+        `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sort=random&q=totalpageviews:10&title=`
     );
         const data = await response.json();
         console.log(data);
