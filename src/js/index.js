@@ -8,18 +8,25 @@ const query = async function() {
         `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sort=random&q=totalpageviews:10&title=&person`
     );
         const data = await response.json();
-        data.records.array.forEach((art) => {
-          DOMSelectors.grid.insertAdjacentHTML("beforeend" ``);
+        data.records.forEach((art) => {
+          DOMSelectors.grid.insertAdjacentHTML("beforeend", `<section class="home-page">
+          <div class="section-content">
+            <img class="piece" src="${art.primaryimageurl}" alt="">
+            <div class="info">
+              <h1 class="piece-name">${art.title}</h1>
+              <h1 class="description">${art.provenance}</h1>
+              <h1 class="artist">${art.name}</h1>
+              <h1 class="time-period">${art.period}</h1>
+            </div>
+          </div>
+        </section>`);
 
         });
       }
        catch (error) {
         console.log(error);
         alert("there was an error");
-      }
+      } 
     };
+
 query();
-
-// Still trying to figure out how to isolate the music section of the API
-
-//using TasteDive
