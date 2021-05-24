@@ -15,7 +15,7 @@ const query = async function() {
             <div class="info">
               <h1 class="piece-name">${art.title}</h1>
               <h1 class="description">${art.provenance}</h1>
-              <h1 class="artist">${art.name}</h1>
+              <h1 class="artist">${art.people}</h1>
               <h1 class="time-period">${art.period}</h1>
             </div>
           </div>
