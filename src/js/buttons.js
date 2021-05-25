@@ -1,14 +1,5 @@
-/* import { DOMSelectors } from "./DOM";
 
-let pageNum = 1
+    const prevBtn = document.querySelector("prev-btn").value === --pageNum;
+    const nextBtn = document.querySelector("next-btn").value === ++pageNum;
 
-const newPage = function(e){
-if(e = DOMSelectors.prevBtn){
-    pageNum--
-} 
-if (e = DOMSelectors.nextBtn){
-    pageNum++
-}
-} 
-
-export { newPage } */
+    let pageNum = 1

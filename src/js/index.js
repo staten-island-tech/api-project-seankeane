@@ -15,8 +15,8 @@ const query = async function() {
             <img class="piece" src="${art.primaryimageurl}" alt="">
             <div class="info">
               <h1 class="piece-name">${art.title}</h1>
-              <h1 class="description">${art.provenance}</h1>
-              <h1 class="artist">${art.people}</h1>
+              <h1 class="technique">${art.technique}</h1>
+              <h1 class="artist">${art.displayname}</h1>
               <h1 class="time-period">${art.period}</h1>
             </div>
           </div>
