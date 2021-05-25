@@ -1,4 +1,5 @@
 @import "_variables.scss";
+@use "_search.scss";
 
 html,
 body {
@@ -17,7 +18,7 @@ header{
   color: $accent-color;
 }
 
-.search-bar{
+.search{
   display: flex;
   justify-content: center;
 }
@@ -38,7 +39,7 @@ input{
   flex-direction: row;
 }
 
-.album-cover{
+.piece{
   height: 40vh;
 }
  
@@ -50,4 +51,15 @@ input{
   font-size: 1rem;
   color: $primary-color-text;
   text-shadow: 10px grey;
+}
+
+.buttons{
+  display: flex;
+  padding: 5rem;
+  justify-content: space-around;
+}
+
+.prev-btn .next-btn{
+  height: 2vh;
+  width: 2vw;
 }
