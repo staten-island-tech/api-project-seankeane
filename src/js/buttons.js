@@ -1,5 +1,10 @@
+/* let pageNum = 1
 
-    const prevBtn = document.querySelector("prev-btn").value === --pageNum;
-    const nextBtn = document.querySelector("next-btn").value === ++pageNum;
+const prevButton = document.getElementById("prev-btn").addEventListener("click", function(){
+    pageNum--
+});
 
-    let pageNum = 1
+const nextButton = document.getElementById("next-btn").addEventListener("click", function(){
+    pageNum++
+});
+ */
