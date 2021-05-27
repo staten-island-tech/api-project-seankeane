@@ -1,9 +1,12 @@
 import { DOMSelectors } from "./DOM";
 
+const key = "9a9c6529-4e77-4e79-a127-93acf5313c71";
+
 const listen = function(){
     DOMSelectors.searchForm.addEventListener("submit", function(e){
         e.preventDefault();
         const searchParams = DOMSelectors.searchArea.value;
+        
         const searchQuery = async function() {
             try {
             const response = await fetch(

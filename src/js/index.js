@@ -6,7 +6,7 @@ const query = async function() {
     try {
     const response = await fetch(
 
-        `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:10&title=&person&page=${pageNum}`
+        `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:10&title=&person&page=${currentPage()}`
     );
         const data = await response.json();
         data.records.forEach((art) => {
@@ -30,19 +30,26 @@ const query = async function() {
       } 
     };
 
-    let pageNum = 1
+    const currentPage = function(){
+    
+      let pageNum = 1
 
+      function n (){
    document.getElementById("prev-btn").addEventListener("click", function(){
-        console.log(pageNum)
-        pageNum--
-        return pageNum
+        let newValue = pageNum--
+        return newValue
     });
-    
    document.getElementById("next-btn").addEventListener("click", function(){
-        console.log(pageNum)
-        pageNum++
-        return pageNum
+        console.log(newValue)
+        let newValue = pageNum++
+        return newValue;
     });
-    
+  };
+
+  //console.log(newValue)
+
+  }
+
+//currentPage();
 
 query();

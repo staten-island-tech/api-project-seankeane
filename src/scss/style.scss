@@ -23,10 +23,6 @@ header{
   justify-content: center;
 }
 
-input{
-  text-align: center;
-}
-
 .home-page{
   padding-top: 5vh;
   display: flex;
@@ -35,12 +31,13 @@ input{
 
 .section-content{
   display: inline-flex;
+  align-items: center;
   width: 80%;
   flex-direction: row;
 }
 
 .piece{
-  width: 40vh;
+  width: 50vh;
 }
  
 .info{
@@ -66,4 +63,22 @@ input{
 
 .hide{
   display: none;
+}
+
+@media screen and (max-width: 1080px){
+
+.section-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info{
+  text-align: center;
+}
+
+.piece{
+  padding-bottom: 7%;
+}
+
 }
