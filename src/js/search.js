@@ -7,11 +7,12 @@ const listen = function(){
         e.preventDefault();
         DOMSelectors.grid.innerHTML = "";
         const searchParams = DOMSelectors.searchArea.value;
+        console.log(searchParams);
         const searchQuery = async function() {
             try {
             const response = await fetch(
 
-              `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:10&title=&query=${searchParams}`
+              `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:10&title=&classification=${searchParams}`
                 
               //`https://api.harvardartmuseums.org/century?apikey=${key}&page=1&query=${searchParams}`
 
@@ -21,16 +22,16 @@ const listen = function(){
               const data = await response.json();
               data.records.forEach((art) => {
                 DOMSelectors.grid.insertAdjacentHTML("beforeend", `<section class="home-page">
-                  <div class="section-content">
-                    <img class="piece" src="${art.primaryimageurl}" alt="">
-                    <div class="info">
-                      <h1 class="piece-name">${art.title}</h1>
-                      <h1 class="description">${art.provenance}</h1>
-                      <h1 class="artist">${art.people}</h1>
-                      <h1 class="time-period">${art.period}</h1>
-                    </div>
-                  </div>
-                </section>`);
+          <div class="section-content">
+            <img class="piece" src="${art.primaryimageurl}" alt="">
+            <div class="info">
+              <h1 class="piece-name">Piece : ${art.title}</h1>
+              <h1 class="technique">Technique Used : ${art.technique}</h1>
+              <h1 class="artist">Artist : ${art.displayname}</h1>
+              <h1 class="time-period">Time Period : ${art.period}</h1>
+            </div>
+          </div>
+        </section>`);
         
                 });
               }
