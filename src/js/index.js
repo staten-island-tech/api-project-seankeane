@@ -6,7 +6,7 @@ const query = async function() {
     try {
     const response = await fetch(
 
-        `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:10&title=&person&page=${currentPage()}`
+        `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:10&title=&person&page=${pageNum}`
     );
         const data = await response.json();
         data.records.forEach((art) => {
@@ -14,10 +14,10 @@ const query = async function() {
           <div class="section-content">
             <img class="piece" src="${art.primaryimageurl}" alt="">
             <div class="info">
-              <h1 class="piece-name">${art.title}</h1>
-              <h1 class="technique">${art.technique}</h1>
-              <h1 class="artist">${art.displayname}</h1>
-              <h1 class="time-period">${art.period}</h1>
+              <h1 class="piece-name">Piece : ${art.title}</h1>
+              <h1 class="technique">Technique Used : ${art.technique}</h1>
+              <h1 class="artist">Artist : ${art.displayname}</h1>
+              <h1 class="time-period">Time Period : ${art.period}</h1>
             </div>
           </div>
         </section>`);
@@ -30,26 +30,15 @@ const query = async function() {
       } 
     };
 
-    const currentPage = function(){
-    
       let pageNum = 1
 
-      function n (){
    document.getElementById("prev-btn").addEventListener("click", function(){
-        let newValue = pageNum--
-        return newValue
+        console.log(pageNum)
+        pageNum--
     });
    document.getElementById("next-btn").addEventListener("click", function(){
-        console.log(newValue)
-        let newValue = pageNum++
-        return newValue;
+        console.log(pageNum)
+        pageNum++
     });
-  };
-
-  //console.log(newValue)
-
-  }
-
-//currentPage();
 
 query();

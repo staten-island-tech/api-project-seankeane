@@ -3,21 +3,24 @@ import { DOMSelectors } from "./DOM";
 const key = "9a9c6529-4e77-4e79-a127-93acf5313c71";
 
 const listen = function(){
-    DOMSelectors.searchForm.addEventListener("submit", function(e){
+    DOMSelectors.searchForm.addEventListener("submit", function(e) {
         e.preventDefault();
+        DOMSelectors.grid.innerHTML = "";
         const searchParams = DOMSelectors.searchArea.value;
-        
         const searchQuery = async function() {
             try {
             const response = await fetch(
-                `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:10&title=&person&page=1`
+
+              `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:10&title=&query=${searchParams}`
+                
+              //`https://api.harvardartmuseums.org/century?apikey=${key}&page=1&query=${searchParams}`
 
                 // still need to add a way to search by name
 
             );
-                const data = await response.json();
-                data.records.forEach((art) => {
-                  DOMSelectors.grid.insertAdjacentHTML("beforeend", `<section class="home-page">
+              const data = await response.json();
+              data.records.forEach((art) => {
+                DOMSelectors.grid.insertAdjacentHTML("beforeend", `<section class="home-page">
                   <div class="section-content">
                     <img class="piece" src="${art.primaryimageurl}" alt="">
                     <div class="info">
