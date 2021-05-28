@@ -1,7 +1,8 @@
-import { DOMSelectors } from "./DOM";
-//import { query } from "./index";
+ import { DOMSelectors } from "./DOM"
 
-              
+    const prevBtn = document.getElementById("prev-btn").addEventListener("click", prev);
+    const nextBtn = document.getElementById("next-btn").addEventListener("click", next);
+
         let i = 1;
   
          function prev() {
@@ -10,9 +11,9 @@ import { DOMSelectors } from "./DOM";
             if (i === 1) {
   
                 // Add disabled attribute on
-                DOMSelectors.prevBtn.disabled = true;
+                prevBtn.disabled = true;
   
-                DOMSelectors.nextBtn.disabled = false;
+                nextBtn.disabled = false;
             } else {
                 i--;
                 return setNo();
@@ -25,12 +26,10 @@ import { DOMSelectors } from "./DOM";
             if (i === 53) {
   
                 // Add disabled attribute on next button
-                document.getElementsByClassName(
-                        'next').disabled = true;
+                nextBtn.disabled = true;
   
                 // Remove disabled attribute from prev button
-                document.getElementsByClassName(
-                        'prev').disabled = false;
+                prevBtn.disabled = false;
             } else {
                 i++;
                 return setNo();
@@ -42,5 +41,7 @@ import { DOMSelectors } from "./DOM";
             // Change innerhtml
             return DOMSelectors.pageNum.innerHTML = `${i}` //, query.response = `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:9&title=&person&page=${i}&verificationlevel=4`;
         }
+
+        //const newValue = ;
 
 export { next , prev, i}

@@ -1,5 +1,7 @@
 import { DOMSelectors } from "./DOM";
-import { key } from "./index";
+//import { key } from "./index";
+
+const key = "9a9c6529-4e77-4e79-a127-93acf5313c71";
 
 const listen = function(){
     DOMSelectors.searchForm.addEventListener("submit", function(e) {
@@ -13,10 +15,6 @@ const listen = function(){
 
               `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:9&title=&classification=${searchParams}`
                 
-              //`https://api.harvardartmuseums.org/century?apikey=${key}&page=1&query=${searchParams}`
-
-                // still need to add a way to search by name
-
             );
               const data = await response.json();
               data.records.forEach((art) => {
