@@ -1,4 +1,5 @@
- import { DOMSelectors } from "./DOM"
+ import { DOMSelectors } from "./DOM";
+ //import {setNo} from "./index"
 
     const prevBtn = document.getElementById("prev-btn").addEventListener("click", prev);
     const nextBtn = document.getElementById("next-btn").addEventListener("click", next);
@@ -7,7 +8,7 @@
   
          function prev() {
   
-            // Start position 
+            // Starting page 
             if (i === 1) {
   
                 // Add disabled attribute on
@@ -28,7 +29,6 @@
                 // Add disabled attribute on next button
                 nextBtn.disabled = true;
   
-                // Remove disabled attribute from prev button
                 prevBtn.disabled = false;
             } else {
                 i++;
@@ -36,12 +36,12 @@
             }
         }
   
-        function setNo() {
-  
-            // Change innerhtml
-            return DOMSelectors.pageNum.innerHTML = `${i}` //, query.response = `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:9&title=&person&page=${i}&verificationlevel=4`;
-        }
+         function setNo() {
 
-        //const newValue = ;
+            // Change innerhtml
+            return DOMSelectors.pageNum.innerHTML = `${i}`;
+        }
+ 
+       
 
 export { next , prev, i}

@@ -1,7 +1,6 @@
 import { DOMSelectors } from "./DOM";
-//import { key } from "./index";
 
-const key = "9a9c6529-4e77-4e79-a127-93acf5313c71";
+const key = "9a9c6529-4e77-4e79-a127-93acf5313c71"; // apparently can't import this value from index.js
 
 const listen = function(){
     DOMSelectors.searchForm.addEventListener("submit", function(e) {
@@ -24,7 +23,6 @@ const listen = function(){
             <div class="info">
               <h1 class="piece-name">Piece : ${art.title}</h1>
               <h1 class="technique">Technique Used : ${art.technique}</h1>
-              <h1 class="artist">Artist : ${art.displayname}</h1>
               <h1 class="time-period">Time Period : ${art.period}</h1>
             </div>
           </div>
