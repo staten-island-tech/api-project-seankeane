@@ -44,6 +44,11 @@ listen();
 /* Some base search terms for going by category:
 . "Coins"
 . "Tools and Equipment"
-. 
+. "Seals"
+. "Photographs" ** This returns a lot of blank images
+. "Jewelry"
+. "Vessels"
+. "Textile Arts"
+. "Lighting Devices"
 
 */
