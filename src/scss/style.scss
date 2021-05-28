@@ -56,14 +56,23 @@ header{
   justify-content: space-around;
 }
 
-#prev-btn #next-btn{
-  height: 2vh;
-  width: 2vw;
+#prev-btn #next-btn button{
+  //height: 2vh;
+  //width: 2vw;
+}
+
+#container{
+  font-size: 0.7rem;
+  background-color: $primary-color-light;
+  color: $primary-color-dark;
+  width: 3vh;
+  display: flex;
+  justify-content: center;
 }
 
 .hide{
   display: none;
-}
+} 
 
 @media screen and (max-width: 1080px){
 
