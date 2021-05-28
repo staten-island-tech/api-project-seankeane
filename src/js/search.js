@@ -13,6 +13,7 @@ const listen = function(){
             const response = await fetch(
 
               `https://api.harvardartmuseums.org/object?apikey=${key}&technique=any&period=any&sortorder=descending&q=totalpageviews:9&title=&classification=${searchParams}`
+
                 
             );
               const data = await response.json();
@@ -50,5 +51,4 @@ listen();
 . "Vessels"
 . "Textile Arts"
 . "Lighting Devices"
-
 */

@@ -57,15 +57,14 @@ header{
 }
 
 #prev-btn #next-btn button{
-  //height: 2vh;
-  //width: 2vw;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
 }
 
 #container{
   font-size: 0.7rem;
-  background-color: $primary-color-light;
+  background-color: $primary-color-text;
   color: $primary-color-dark;
-  width: 3vh;
+  width: 3.4vh;
   display: flex;
   justify-content: center;
 }
