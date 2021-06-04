@@ -1,5 +1,5 @@
  import { DOMSelectors } from "./DOM";
- //import {setNo} from "./index"
+ import {query} from "./index"
 
     const prevBtn = document.getElementById("prev-btn").addEventListener("click", prev);
     const nextBtn = document.getElementById("next-btn").addEventListener("click", next);
@@ -37,11 +37,12 @@
         }
   
          function setNo() {
-
+             //console.log(i)
             // Change innerhtml
-            return DOMSelectors.pageNum.innerHTML = `${i}`;
+            return DOMSelectors.pageNum.innerHTML = `${i}`, DOMSelectors.grid;
         }
  
+console.log(setNo(i)) // not working
        
 
 export { next , prev, i}

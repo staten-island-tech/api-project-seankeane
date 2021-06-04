@@ -30,10 +30,9 @@ const query = async function() {
         alert("there was an error");
       } 
     };
-
       
 query();
 
 //console.log(n)
 
-export { key };
+export { query };
